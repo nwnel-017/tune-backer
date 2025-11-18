@@ -72,10 +72,10 @@ export const signupUser = async (email, password) => {
 export const logoutUser = async () => {
   console.log("logging out...");
   queryClient.clear();
-  window.location.reload();
-  // const response = await axios.get(
-  //   `${process.env.REACT_APP_API_BASE_URL}/auth/logout`,
-  //   { withCredentials: true }
-  // );
-  // return response.status;
+  // window.location.reload();
+  const response = await axios.get(
+    `${process.env.REACT_APP_API_BASE_URL}/auth/logout`,
+    { withCredentials: true }
+  );
+  return response.status;
 };

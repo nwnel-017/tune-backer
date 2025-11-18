@@ -63,7 +63,8 @@ const Home = () => {
     } catch (error) {
       throw new Error("Error ending user session: " + error);
     }
-    navigate("/");
+    // navigate("/");
+    window.location.reload();
   };
 
   const toggleSidebar = () => {
