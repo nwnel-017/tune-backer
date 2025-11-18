@@ -9,6 +9,7 @@ import Help from "./Help";
 import AccountNotLinked from "../components/AccountNotLinked";
 import PrivacyPolicy from "./PrivacyPolicy";
 import UnlinkAccount from "../components/UnlinkAccount";
+import defaultAvatar from "../assets/icons/default-avatar.png";
 import {
   getSpotifyProfile,
   startSpotifyAuth,
@@ -150,8 +151,9 @@ const Home = () => {
           <header className={styles.header}>
             <img
               src={
-                (profile?.images.length > 0 && profile.images[0].url) ||
-                "default-avatar.png"
+                profile?.images.length > 0
+                  ? profile.images[0].url
+                  : defaultAvatar
               }
               alt="Profile"
               className={styles.profileImage}

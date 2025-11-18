@@ -127,7 +127,7 @@ exports.handleCallback = async (req, res) => {
     }
   } catch (err) {
     console.error(err);
-    return res.status(500).send("OAuth callback failed");
+    return res.status(500).send("Something went wrong!");
   }
 };
 

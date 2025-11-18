@@ -403,6 +403,7 @@ async function buildOAuthUrl({
     });
 
     if (error) {
+      console.log("Error inserting nonce: " + error);
       throw new Error("Error inserting nonce into database: " + error.message);
     }
 
