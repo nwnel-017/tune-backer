@@ -14,12 +14,14 @@ import {
   getSpotifyProfile,
   startSpotifyAuth,
 } from "../services/SpotifyService";
+import { useQueryClient } from "@tanstack/react-query";
 import { logoutUser } from "../services/AuthService";
 import { toast } from "react-toastify";
 import "../App.css";
 import styles from "./styles/Home.module.css";
 
 const Home = () => {
+  const queryClient = useQueryClient();
   const { user, authLoading } = useAuth();
   const { search } = useLocation();
   const params = new URLSearchParams(search);
@@ -63,7 +65,8 @@ const Home = () => {
     } catch (error) {
       throw new Error("Error ending user session: " + error);
     }
-    // navigate("/");
+    queryClient.removeQueries(["playlists"]);
+    queryClient.removeQueries(["backups"]);
     window.location.reload();
   };
 

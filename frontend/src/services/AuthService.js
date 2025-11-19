@@ -1,6 +1,5 @@
 import axios from "axios";
-import { useQuery, useQueryClient } from "@tanstack/react-query";
-import queryClient from "./utils/query/QueryClient.js";
+// import queryClient from "./utils/query/QueryClient.js";
 
 // issue here
 // in production - when the email failes and we receive a 500 error from the backend - not caught properly
@@ -71,8 +70,7 @@ export const signupUser = async (email, password) => {
 // tested
 export const logoutUser = async () => {
   console.log("logging out...");
-  queryClient.clear();
-  // window.location.reload();
+  // queryClient.clear();
   const response = await axios.get(
     `${process.env.REACT_APP_API_BASE_URL}/auth/logout`,
     { withCredentials: true }
