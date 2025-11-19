@@ -13,9 +13,10 @@ Password: Testing123
 You can create an account through TuneBacker (any email / password), and link it to the provided Spotify account with these credentials.
 <br><br>
 ***My Tech Stack*** 
-<br>-Frontend: React
-<br>-Backend: Node.js and Express 
-<br>-Database: Supabase
+<br>-Frontend: React.js
+<br>-Backend: Node.js, Express 
+<br>-Database: Supabase, PostgreSQL
+<br>-Deployment: Vercel, Render
 <br><br>
 TuneBacker is an app I designed to provide a way for spotify users to keep their playlists secure with weekly backups, with ability to restore playlists between accounts. My app also provides a way to download a playlist as a .csv file, which can be uploaded to any spotify account. This also allows an easy way for users to transfer playlists between accounts. 
 
