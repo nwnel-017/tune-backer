@@ -10,7 +10,7 @@ is only available for Spotify accounts I specifically whitelist (up to 25 users)
 Email: testtunebacker@gmail.com<br>
 Password: Testing123
 <br><br>
-You can create an account through TuneBacker (any email / password), and link it to the Spotify account with these credentials.
+You can create an account through TuneBacker (any email / password), and link it to the provided Spotify account with these credentials.
 <br><br>
 ***My Tech Stack*** 
 <br>-Frontend: React
