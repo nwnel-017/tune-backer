@@ -128,6 +128,15 @@ body {
   color: var(--text-gray);
   max-width: 50%;
   text-align: center;
+  padding-top: 1rem;
+}
+
+.subContentText {
+  font-size: 0.85rem;
+  color: var(--text-gray);
+  max-width: 80%;
+  text-align: center;
+  padding-top: 1rem;
 }
 
 .textFooter {
@@ -135,6 +144,22 @@ body {
   justify-content: center;
   padding-top: 0;
   margin-top: 0;
+}
+
+/* .footer {
+  position: absolute;
+} */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 2rem;
+  font-size: 0.6rem;
+  color: var(--text-gray);
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .header {
@@ -466,8 +491,9 @@ body {
 
 .landingPage {
   background-color: var(--background-color);
-  height: 100vh;
+  min-height: 100dvh;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -539,9 +565,13 @@ body {
   border-radius: 20px;
   background-color: var(--background-color);
   color: var(--text-gray);
-  width: 90%;
+  width: 50%;
   cursor: pointer;
   /* font-size: 0.7rem; */
+}
+
+.border {
+  border: 2px solid yellow;
 }
 
 .navButton:hover {
@@ -556,6 +586,7 @@ body {
   background-color: var(--spotify-lightgreen);
   cursor: pointer;
   width: 40%;
+  height: 2rem;
 }
 
 .loginBtnHollow:hover {
@@ -624,6 +655,10 @@ body {
 
   .playlistTitle {
     max-width: 500px;
+  }
+
+  .subContentText {
+    max-width: 50%;
   }
 }
 
