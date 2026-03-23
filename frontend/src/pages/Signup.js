@@ -30,7 +30,7 @@ const SignupPage = () => {
 
     try {
       startLoading("overlay");
-      const res = await signupUser(email, password);
+      await signupUser(email, password);
       toast.success(
         "Verification email has been sent! Please follow the link to verify your account",
       );
