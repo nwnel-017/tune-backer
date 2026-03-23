@@ -14,7 +14,8 @@ const LandingPage = () => {
           <div className={styles.landingContent}>
             <div className={styles.titleText}>TuneBacker</div>
             <div className={styles.subTitleText}>
-              Keep your playlists safe for free - backup and restore anytime
+              Keep your music safe. Backup and restore your Spotify playlists
+              securely.
             </div>
             <div className={styles.landingButtons}>
               {/* <button
