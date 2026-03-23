@@ -74,7 +74,7 @@ export async function backupPlaylist(playlistId, playlistName) {
   }
   console.log(
     "calling backend api route with: " +
-      `${process.env.REACT_APP_API_BASE_URL}/backup/single/${playlistId}`
+      `${process.env.REACT_APP_API_BASE_URL}/backup/single/${playlistId}`,
   );
   try {
     const response = await api.post(
@@ -82,7 +82,7 @@ export async function backupPlaylist(playlistId, playlistName) {
       {},
       {
         responseType: "blob",
-      }
+      },
     );
     const blob = response.data; // Access binary data from response.data
     const url = window.URL.createObjectURL(blob); // error here
@@ -104,11 +104,17 @@ export async function triggerWeeklyBackup(playlistId, playlistName) {
   try {
     await api.post("/backup/weekly", { playlistId, playlistName });
   } catch (error) {
-    throw {
-      message: error.response?.data?.message || error.message,
-      code: error.response?.data?.code || "UNKNOWN_ERROR",
-      status: error.response?.status || 500,
-    };
+    // throw {
+    //   message: error.response?.data?.message || error.message,
+    //   code: error.response?.data?.code || "UNKNOWN_ERROR",
+    //   status: error.response?.status || 500,
+    // };
+    const err = new Error(error.response?.data?.message || error.message);
+
+    err.code = error.response?.data?.code || "UNKNOWN_ERROR";
+    err.status = error.response?.status || 500;
+
+    throw err;
   }
 }
 
