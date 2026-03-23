@@ -23,7 +23,7 @@ const SignupPage = () => {
     } else if (!passwordReenter) {
       toast.error("Please reenter your password");
       return;
-    } else if (password != passwordReenter) {
+    } else if (password !== passwordReenter) {
       toast.error("Passwords do not match");
       return;
     }
@@ -32,7 +32,7 @@ const SignupPage = () => {
       startLoading("overlay");
       const res = await signupUser(email, password);
       toast.success(
-        "Verification email has been sent! Please follow the link to verify your account"
+        "Verification email has been sent! Please follow the link to verify your account",
       );
       //email verification currently disabled - cant send emails since I do not own the domain
       // toast.success("Account successfully created! Please log in to continue.");
