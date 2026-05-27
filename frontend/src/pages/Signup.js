@@ -32,7 +32,8 @@ const SignupPage = () => {
       startLoading("overlay");
       await signupUser(email, password);
       toast.success(
-        "Verification email has been sent! Please follow the link to verify your account",
+        // "Verification email has been sent! Please follow the link to verify your account",
+        "Account created successfully! Please log in to continue",
       );
     } catch (error) {
       console.log("Error signing up!");
