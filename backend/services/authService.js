@@ -43,7 +43,7 @@ async function signupUser(email, password) {
   // insert user into database
   const { data, error } = await supabase
     .from("users")
-    .insert([{ email, password: hashed, verified: false }])
+    .insert([{ email, password: hashed, verified: true }]) // email verification is turned off in production
     .select("id")
     .single();
 
@@ -59,12 +59,12 @@ async function signupUser(email, password) {
   console.log("Successfully signed up user!");
 
   // send verificaton email - currently turned off in production - cant send emails since I do not own the domain
-  try {
-    const emailToken = generateEmailVerificationToken(email);
-    await resendEmail(email, emailToken);
-  } catch (error) {
-    throw new Error("Error sending verification email!");
-  }
+  // try {
+  //   const emailToken = generateEmailVerificationToken(email);
+  //   await resendEmail(email, emailToken);
+  // } catch (error) {
+  //   throw new Error("Error sending verification email!");
+  // }
 }
 
 async function loginUser(email, password) {
